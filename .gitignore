@@ -27,3 +27,17 @@
 *.exe
 *.out
 *.app
+
+#ginerated files
+*.sdf
+
+#debug
+debug/
+x64/
+bin/
+obj/
+ipch/
+*.pdb
+*.filters
+*.user
+*.suo
