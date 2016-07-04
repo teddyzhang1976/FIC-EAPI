@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\gitHubProject\FIC-EAPI\SDK;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\gitHubProject\FIC-EAPI\SDK;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)SDK;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)SDK;$(LibraryPath)</LibraryPath>
     <LibraryWPath>$(LibraryWPath)</LibraryWPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

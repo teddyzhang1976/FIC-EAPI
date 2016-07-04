@@ -4,6 +4,8 @@
 #include "stdafx.h"
 #include "FIC-EAPI.h"
 #include "utilityLib.h"
+#include "WinIOUtility.h"
+//#pragma comment(lib,"WinIOUtility.lib")
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -34,6 +36,11 @@ extern "C" __declspec(dllexport) int Add(int a, int b)
 }
 
 int fnFICEAPI(void){
+	CWinIOUtility::InitWinIO();
+	DWORD dw = CWinIOUtility::getCPUTemperature();
+	printf("CPU T = 0X%x or %d C", dw, dw);
+	CWinIOUtility::FinalizeWinIO();
+
 	printf("I'm here\n");
 	return 32;
 }
