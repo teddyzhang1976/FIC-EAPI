@@ -162,6 +162,13 @@ copy $(ProjectDir)FIC-EAPI.h $(SolutionDir)SDK\</Command>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FIC-EAPI.h" />
+    <ClInclude Include="IEAPIBackLight.h" />
+    <ClInclude Include="IEAPIBoardInfo.h" />
+    <ClInclude Include="IEAPIGpio.h" />
+    <ClInclude Include="IEAPII2cBus.h" />
+    <ClInclude Include="IEAPIStorage.h" />
+    <ClInclude Include="IEAPIWatchdog.h" />
+    <ClInclude Include="ModuleFactory.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -169,6 +176,13 @@ copy $(ProjectDir)FIC-EAPI.h $(SolutionDir)SDK\</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FIC-EAPI.cpp" />
+    <ClCompile Include="IEAPIBackLight.cpp" />
+    <ClCompile Include="IEAPIBoardInfo.cpp" />
+    <ClCompile Include="IEAPIGpio.cpp" />
+    <ClCompile Include="IEAPII2cBus.cpp" />
+    <ClCompile Include="IEAPIStorage.cpp" />
+    <ClCompile Include="IEAPIWatchdog.cpp" />
+    <ClCompile Include="ModuleFactory.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

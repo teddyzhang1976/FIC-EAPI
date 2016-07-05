@@ -4,9 +4,25 @@
 #include "stdafx.h"
 #include "FIC-EAPI.h"
 #include "utilityLib.h"
-#include "WinIOUtility.h"
-//#pragma comment(lib,"WinIOUtility.lib")
 
+//EC base 
+#include "WinIOUtility.h"  
+
+///////////////////////////////////////////////////////////////////////////////
+//Hold interface of all modules and factory to create all these interfaces.
+#include "IEAPIBackLight.h"
+#include "IEAPIWatchdog.h"
+#include "IEAPII2cBus.h"
+#include "IEAPIStorage.h"
+#include "IEAPIGpio.h"
+#include "IEAPIBoardInfo.h"
+
+#include "ModuleFactory.h"
+///////////////////////////////////////////////////////////////////////////////
+
+//Global Interfaces Handles
+
+///////////////////////////////////////////////////////////////////////////////
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
