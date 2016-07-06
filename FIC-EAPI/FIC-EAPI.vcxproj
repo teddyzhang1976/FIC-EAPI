@@ -161,6 +161,12 @@ copy $(ProjectDir)FIC-EAPI.h $(SolutionDir)SDK\</Command>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EAPIBackLightECImpl.h" />
+    <ClInclude Include="EAPIBoardInfoECImpl.h" />
+    <ClInclude Include="EAPIGpioECImpl.h" />
+    <ClInclude Include="EAPII2cBusECImpl.h" />
+    <ClInclude Include="EAPIStorageECImpl.h" />
+    <ClInclude Include="EAPIWatchdogECImpl.h" />
     <ClInclude Include="FIC-EAPI.h" />
     <ClInclude Include="IEAPIBackLight.h" />
     <ClInclude Include="IEAPIBoardInfo.h" />
@@ -175,6 +181,12 @@ copy $(ProjectDir)FIC-EAPI.h $(SolutionDir)SDK\</Command>
     <ClInclude Include="utilityLib.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="EAPIBackLightECImpl.cpp" />
+    <ClCompile Include="EAPIBoardInfoECImpl.cpp" />
+    <ClCompile Include="EAPIGpioECImpl.cpp" />
+    <ClCompile Include="EAPII2cBusECImpl.cpp" />
+    <ClCompile Include="EAPIStorageECImpl.cpp" />
+    <ClCompile Include="EAPIWatchdogECImpl.cpp" />
     <ClCompile Include="FIC-EAPI.cpp" />
     <ClCompile Include="IEAPIBackLight.cpp" />
     <ClCompile Include="IEAPIBoardInfo.cpp" />

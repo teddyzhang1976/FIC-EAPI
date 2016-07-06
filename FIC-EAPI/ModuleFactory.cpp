@@ -1,14 +1,9 @@
+//Here, you will be able to configure which impls for those interfaces export to EAPI.h
+//One of them is EC based driver to implement all of them.
 #include "stdafx.h"
 #include "ModuleFactory.h"
 
-///////////////////////////////////////////////////////////////////////////////
-//Hold interface of all modules and factory to create all these interfaces.
-#include "IEAPIBackLight.h"
-#include "IEAPIWatchdog.h"
-#include "IEAPII2cBus.h"
-#include "IEAPIStorage.h"
-#include "IEAPIGpio.h"
-#include "IEAPIBoardInfo.h"
+
 
 ModuleFactory::ModuleFactory()
 {
@@ -17,4 +12,9 @@ ModuleFactory::ModuleFactory()
 
 ModuleFactory::~ModuleFactory()
 {
+}
+
+IEAPII2cBus* ModuleFactory::createII2cBus(){
+	//EC impl
+	return EAPII2cBusECImpl::getInstance();
 }
