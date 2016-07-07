@@ -16,3 +16,7 @@ EAPII2cBusECImpl* EAPII2cBusECImpl::getInstance(){
 		i2cBusImpl = new EAPII2cBusECImpl();
 	return i2cBusImpl;
 }
+void EAPII2cBusECImpl::delInstance(){
+	delete i2cBusImpl;
+	i2cBusImpl = NULL;
+}

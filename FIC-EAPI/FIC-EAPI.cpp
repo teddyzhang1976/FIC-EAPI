@@ -5,9 +5,6 @@
 #include "FIC-EAPI.h"
 #include "utilityLib.h"
 
-//EC base 
-#include "WinIOUtility.h"  
-
 ///////////////////////////////////////////////////////////////////////////////
 //Hold interface of all modules and factory to create all these interfaces.
 #include "IEAPIBackLight.h"
@@ -20,7 +17,10 @@
 #include "ModuleFactory.h"
 ///////////////////////////////////////////////////////////////////////////////
 
-//Global Interfaces Handles
+//Global factory Handles
+//
+ModuleFactory* gModuleFactory = NULL;
+
 
 ///////////////////////////////////////////////////////////////////////////////
 #ifdef _DEBUG
@@ -52,11 +52,6 @@ extern "C" __declspec(dllexport) int Add(int a, int b)
 }
 
 int fnFICEAPI(void){
-	CWinIOUtility::InitWinIO();
-	DWORD dw = CWinIOUtility::getCPUTemperature();
-	printf("CPU T = 0X%x or %d C", dw, dw);
-	CWinIOUtility::FinalizeWinIO();
-
 	printf("I'm here\n");
 	return 32;
 }
@@ -674,6 +669,12 @@ EApiLibInitialize(void)
 	EAPI_CHECK_NOT_INITIALIZED(EApiLibInitialize);
 	Initialized = 1;
 	//EApiInitLib();
+	gModuleFactory = ModuleFactory::getInstance();
+	if (NULL == gModuleFactory){
+		Initialized = 0;
+		StatusCode = EAPI_STATUS_NOT_INITIALIZED;
+		return StatusCode;
+	}
 	EAPI_LIB_RETURN_SUCCESS(EApiLibInitialize, "");
 	//
 
@@ -687,6 +688,10 @@ EApiLibUnInitialize(void)
 	EAPI_CHECK_INITIALIZED(EApiLibUnInitialize);
 //	EApiUninitLib();
 	Initialized = 0;
+	if (NULL != gModuleFactory){
+		ModuleFactory::delInstance();
+		gModuleFactory = NULL;
+	}
 	EAPI_LIB_RETURN_SUCCESS(EApiLibUnInitialize, "");
 	//
 

@@ -9,5 +9,6 @@ private:
 public:
 	~EAPII2cBusECImpl();
 	static EAPII2cBusECImpl* getInstance();
+	static void delInstance();
 };
 
