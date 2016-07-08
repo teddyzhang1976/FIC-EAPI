@@ -21,8 +21,10 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 
 	HMODULE hModule = ::GetModuleHandle(NULL);
 
+	EApiLibInitialize();
 	fnFICEAPI();
-	//EApiLibInitialize();
+	EApiLibUnInitialize();
+	//
 	getchar();
 
 	if (hModule != NULL)

@@ -10,3 +10,5 @@ IEAPII2cBus::IEAPII2cBus()
 IEAPII2cBus::~IEAPII2cBus()
 {
 }
+
+//void IEAPII2cBus::test(){}

@@ -52,6 +52,8 @@ extern "C" __declspec(dllexport) int Add(int a, int b)
 }
 
 int fnFICEAPI(void){
+	if (NULL != gModuleFactory)
+		gModuleFactory->gI2cBusHandle->test();
 	printf("I'm here\n");
 	return 32;
 }

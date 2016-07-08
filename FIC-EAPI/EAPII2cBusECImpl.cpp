@@ -20,3 +20,11 @@ void EAPII2cBusECImpl::delInstance(){
 	delete i2cBusImpl;
 	i2cBusImpl = NULL;
 }
+void EAPII2cBusECImpl::test(){
+	printf("I'm in EAPII2CbusECImpl:test\n");
+}
+UINT32 EAPII2cBusECImpl::EApiI2CGetBusCap(
+	UINT32 Id,
+	UINT32 *pMaxBlkLen){
+	return 0;
+}
