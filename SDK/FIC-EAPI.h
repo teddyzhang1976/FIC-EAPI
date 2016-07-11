@@ -11,11 +11,11 @@
 #endif
 
 // 此类是从 FIC-EAPI.dll 导出的
-class FICEAPI_API CFICEAPI {
-public:
-	CFICEAPI(void);
-	// TODO:  在此添加您的方法。
-};
+//class FICEAPI_API CFICEAPI {
+//public:
+//	CFICEAPI(void);
+//	// TODO:  在此添加您的方法。
+//};
 
 
 extern FICEAPI_API int nFICEAPI;

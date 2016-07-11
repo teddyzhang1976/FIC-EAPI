@@ -6,7 +6,6 @@ EAPIBackLightECImpl::EAPIBackLightECImpl()
 {
 }
 
-
-EAPIBackLightECImpl::~EAPIBackLightECImpl()
-{
+void EAPIBackLightECImpl::test(){
+	printf("I'm in EAPIBackLightECImpl:test\n");
 }

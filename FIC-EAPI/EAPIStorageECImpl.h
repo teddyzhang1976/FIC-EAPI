@@ -3,8 +3,12 @@
 class EAPIStorageECImpl :
 	public IEAPIStorage
 {
-public:
+private:
+	static EAPIStorageECImpl* storageImpl;
 	EAPIStorageECImpl();
-	~EAPIStorageECImpl();
+public:
+	static EAPIStorageECImpl* getInstance();
+	static void delInstance();
+	void test();
 };
 

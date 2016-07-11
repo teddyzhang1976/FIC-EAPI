@@ -3,8 +3,12 @@
 class EAPIGpioECImpl :
 	public IEAPIGpio
 {
-public:
+private:
+	static EAPIGpioECImpl* gpioImpl;
 	EAPIGpioECImpl();
-	~EAPIGpioECImpl();
+public:
+	static EAPIGpioECImpl* getInstance();
+	static void delInstance();
+	void test();
 };
 

@@ -3,8 +3,13 @@
 class EAPIBackLightECImpl :
 	public IEAPIBackLight
 {
-public:
+private:
+	static EAPIBackLightECImpl* backLightImpl;
 	EAPIBackLightECImpl();
-	~EAPIBackLightECImpl();
+public:
+	static EAPIBackLightECImpl* getInstance();
+	static void delInstance();
+	void test();
+
 };
 

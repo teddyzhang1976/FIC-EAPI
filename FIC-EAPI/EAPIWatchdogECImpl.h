@@ -3,8 +3,12 @@
 class EAPIWatchdogECImpl :
 	public IEAPIWatchdog
 {
-public:
+private:
+	static EAPIWatchdogECImpl* watchdogImpl;
 	EAPIWatchdogECImpl();
-	~EAPIWatchdogECImpl();
+public:
+	static EAPIWatchdogECImpl* getInstance();
+	static void delInstance();
+	void test();
 };
 

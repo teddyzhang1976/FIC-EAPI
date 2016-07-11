@@ -3,8 +3,13 @@
 class EAPIBoardInfoECImpl :
 	public IEAPIBoardInfo
 {
-public:
+private:
+	static EAPIBoardInfoECImpl* boardInfoImpl;
 	EAPIBoardInfoECImpl();
-	~EAPIBoardInfoECImpl();
+public:
+	static EAPIBoardInfoECImpl* getInstance();
+	static void delInstance();
+	void test();
+
 };
 

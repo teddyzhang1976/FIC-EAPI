@@ -7,6 +7,7 @@ EAPIStorageECImpl::EAPIStorageECImpl()
 }
 
 
-EAPIStorageECImpl::~EAPIStorageECImpl()
-{
+void EAPIStorageECImpl::test(){
+	printf("I'm in EAPIStorageECImpl:test\n");
 }
+

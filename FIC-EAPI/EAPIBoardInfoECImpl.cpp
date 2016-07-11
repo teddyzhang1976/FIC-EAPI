@@ -7,6 +7,6 @@ EAPIBoardInfoECImpl::EAPIBoardInfoECImpl()
 }
 
 
-EAPIBoardInfoECImpl::~EAPIBoardInfoECImpl()
-{
+void EAPIBoardInfoECImpl::test(){
+	printf("I'm in EAPIBoardInfoECImpl:test\n");
 }
