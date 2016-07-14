@@ -17,12 +17,14 @@ using namespace std;
 
 int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 {
-	int nRetCode = 0;
+	UINT32 nRetCode = 0;
 
 	HMODULE hModule = ::GetModuleHandle(NULL);
 
 	EApiLibInitialize();
 	fnFICEAPI();
+	EApiVgaGetBacklightEnable(1, &nRetCode);
+	printf("nRetCode = %d \n", nRetCode);
 	EApiLibUnInitialize();
 	//
 	getchar();

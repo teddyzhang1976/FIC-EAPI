@@ -20,9 +20,12 @@ namespace FIC_EAPI_CSharpGUITest
             InitializeComponent();
         }
 
+        //private TestBackLight backLight = new TestBackLight();
+
         private void button1_Click(object sender, EventArgs e)
         {
-            int i = fnFICEAPI();
+            IntPtr i = new IntPtr();
+            fnFICEAPI();
         }
     }
 }

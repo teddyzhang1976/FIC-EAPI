@@ -26,6 +26,7 @@ UINT32 EAPIBackLightECImpl::EApiVgaGetBacklightEnable(
 	UINT32  Id, /* Backlight Id */
 	UINT32 *pEnable   /* Backlight Enable */
 	){
+	*pEnable = 559;
 	return EAPI_STATUS_UNSUPPORTED;
 }
 	
