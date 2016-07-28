@@ -7,12 +7,18 @@
 #include "FIC-EAPI-GUITestDlg.h"
 #include "afxdialogex.h"
 
+////////////////////////////
+//include all components
+#include "WatchdogDialog.h"
+
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
+WatchdogDialog *p_WatchdogDlg;
 
 class CAboutDlg : public CDialogEx
 {
@@ -62,6 +68,8 @@ BEGIN_MESSAGE_MAP(CFICEAPIGUITestDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BUTTON_WATCHDOG, &CFICEAPIGUITestDlg::OnBnClickedButtonWatchdog)
+	ON_BN_CLICKED(IDC_BUTTON_GPIO, &CFICEAPIGUITestDlg::OnBnClickedButtonGpio)
 END_MESSAGE_MAP()
 
 
@@ -150,3 +158,27 @@ HCURSOR CFICEAPIGUITestDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+
+void CFICEAPIGUITestDlg::OnBnClickedButtonWatchdog()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	if (p_WatchdogDlg != NULL)
+	{
+		p_WatchdogDlg->DestroyWindow();
+		delete p_WatchdogDlg;
+		p_WatchdogDlg = NULL;
+	}
+
+	//.RePaint();
+
+	p_WatchdogDlg = new WatchdogDialog();
+	INT_PTR nResponse = p_WatchdogDlg->DoModal();
+}
+
+
+void CFICEAPIGUITestDlg::OnBnClickedButtonGpio()
+{
+	// TODO:  在此添加控件通知处理程序代码
+}
