@@ -108,6 +108,7 @@
     <ClInclude Include="FIC-EAPI-GUITestDlg.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StorageDialog.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="WatchdogDialog.h" />
   </ItemGroup>
@@ -118,6 +119,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="StorageDialog.cpp" />
     <ClCompile Include="WatchdogDialog.cpp" />
   </ItemGroup>
   <ItemGroup>

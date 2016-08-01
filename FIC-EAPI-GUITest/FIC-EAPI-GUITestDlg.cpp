@@ -10,7 +10,7 @@
 ////////////////////////////
 //include all components
 #include "WatchdogDialog.h"
-
+#include "StorageDialog.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -19,6 +19,7 @@
 
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
 WatchdogDialog *p_WatchdogDlg;
+StorageDialog *p_StorageDlg;
 
 class CAboutDlg : public CDialogEx
 {
@@ -70,6 +71,7 @@ BEGIN_MESSAGE_MAP(CFICEAPIGUITestDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON_WATCHDOG, &CFICEAPIGUITestDlg::OnBnClickedButtonWatchdog)
 	ON_BN_CLICKED(IDC_BUTTON_GPIO, &CFICEAPIGUITestDlg::OnBnClickedButtonGpio)
+	ON_BN_CLICKED(IDC_BUTTON_STORAGE, &CFICEAPIGUITestDlg::OnBnClickedButtonStorage)
 END_MESSAGE_MAP()
 
 
@@ -180,5 +182,23 @@ void CFICEAPIGUITestDlg::OnBnClickedButtonWatchdog()
 
 void CFICEAPIGUITestDlg::OnBnClickedButtonGpio()
 {
+	// TODO:  在此添加控件通知处理程序代码
+}
+
+
+void CFICEAPIGUITestDlg::OnBnClickedButtonStorage()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	if (p_StorageDlg != NULL)
+	{
+		p_StorageDlg->DestroyWindow();
+		delete p_StorageDlg;
+		p_StorageDlg = NULL;
+	}
+
+	//.RePaint();
+
+	p_StorageDlg = new StorageDialog();
+	INT_PTR nResponse = p_StorageDlg->DoModal();
 	// TODO:  在此添加控件通知处理程序代码
 }

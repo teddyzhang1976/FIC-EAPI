@@ -34,4 +34,5 @@ public:
 	afx_msg void OnBnClickedButton2();
 	afx_msg void OnBnClickedButtonWatchdog();
 	afx_msg void OnBnClickedButtonGpio();
+	afx_msg void OnBnClickedButtonStorage();
 };
