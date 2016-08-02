@@ -11,6 +11,7 @@
 //include all components
 #include "WatchdogDialog.h"
 #include "StorageDialog.h"
+#include "I2CBusDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -20,6 +21,7 @@
 // 用于应用程序“关于”菜单项的 CAboutDlg 对话框
 WatchdogDialog *p_WatchdogDlg;
 StorageDialog *p_StorageDlg;
+I2CBusDlg *p_I2cBusDlg;
 
 class CAboutDlg : public CDialogEx
 {
@@ -72,6 +74,7 @@ BEGIN_MESSAGE_MAP(CFICEAPIGUITestDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_WATCHDOG, &CFICEAPIGUITestDlg::OnBnClickedButtonWatchdog)
 	ON_BN_CLICKED(IDC_BUTTON_GPIO, &CFICEAPIGUITestDlg::OnBnClickedButtonGpio)
 	ON_BN_CLICKED(IDC_BUTTON_STORAGE, &CFICEAPIGUITestDlg::OnBnClickedButtonStorage)
+	ON_BN_CLICKED(IDC_BUTTON_I2CBUS, &CFICEAPIGUITestDlg::OnBnClickedButtonI2cbus)
 END_MESSAGE_MAP()
 
 
@@ -201,4 +204,20 @@ void CFICEAPIGUITestDlg::OnBnClickedButtonStorage()
 	p_StorageDlg = new StorageDialog();
 	INT_PTR nResponse = p_StorageDlg->DoModal();
 	// TODO:  在此添加控件通知处理程序代码
+}
+
+
+void CFICEAPIGUITestDlg::OnBnClickedButtonI2cbus()
+{
+	if (p_I2cBusDlg != NULL)
+	{
+		p_I2cBusDlg->DestroyWindow();
+		delete p_I2cBusDlg;
+		p_I2cBusDlg = NULL;
+	}
+
+	//.RePaint();
+
+	p_I2cBusDlg = new I2CBusDlg();
+	INT_PTR nResponse = p_I2cBusDlg->DoModal();
 }
