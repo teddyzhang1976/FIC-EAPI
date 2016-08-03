@@ -12,6 +12,7 @@
 #include "WatchdogDialog.h"
 #include "StorageDialog.h"
 #include "I2CBusDlg.h"
+#include "GPIODialog.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -22,6 +23,7 @@
 WatchdogDialog *p_WatchdogDlg;
 StorageDialog *p_StorageDlg;
 I2CBusDlg *p_I2cBusDlg;
+GPIODialog *p_GPIODialog;
 
 class CAboutDlg : public CDialogEx
 {
@@ -186,6 +188,17 @@ void CFICEAPIGUITestDlg::OnBnClickedButtonWatchdog()
 void CFICEAPIGUITestDlg::OnBnClickedButtonGpio()
 {
 	// TODO:  在此添加控件通知处理程序代码
+	if (p_GPIODialog != NULL)
+	{
+		p_GPIODialog->DestroyWindow();
+		delete p_GPIODialog;
+		p_GPIODialog = NULL;
+	}
+
+	//.RePaint();
+
+	p_GPIODialog = new GPIODialog();
+	INT_PTR nResponse = p_GPIODialog->DoModal();
 }
 
 
