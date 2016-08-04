@@ -104,6 +104,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BacklightDialog.h" />
     <ClInclude Include="FIC-EAPI-GUITest.h" />
     <ClInclude Include="FIC-EAPI-GUITestDlg.h" />
     <ClInclude Include="GPIODialog.h" />
@@ -115,6 +116,7 @@
     <ClInclude Include="WatchdogDialog.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BacklightDialog.cpp" />
     <ClCompile Include="FIC-EAPI-GUITest.cpp" />
     <ClCompile Include="FIC-EAPI-GUITestDlg.cpp" />
     <ClCompile Include="GPIODialog.cpp" />

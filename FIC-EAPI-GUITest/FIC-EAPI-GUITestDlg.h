@@ -36,4 +36,5 @@ public:
 	afx_msg void OnBnClickedButtonGpio();
 	afx_msg void OnBnClickedButtonStorage();
 	afx_msg void OnBnClickedButtonI2cbus();
+	afx_msg void OnBnClickedButtonBacklight();
 };
