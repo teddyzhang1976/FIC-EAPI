@@ -37,4 +37,5 @@ public:
 	afx_msg void OnBnClickedButtonStorage();
 	afx_msg void OnBnClickedButtonI2cbus();
 	afx_msg void OnBnClickedButtonBacklight();
+	afx_msg void OnBnClickedButtonBoardinfo();
 };

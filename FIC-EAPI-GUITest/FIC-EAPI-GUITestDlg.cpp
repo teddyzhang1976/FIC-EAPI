@@ -14,6 +14,7 @@
 #include "I2CBusDlg.h"
 #include "GPIODialog.h"
 #include "BacklightDialog.h"
+#include "BoardInfoDialog.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -26,6 +27,7 @@ StorageDialog *p_StorageDlg;
 I2CBusDlg *p_I2cBusDlg;
 GPIODialog *p_GPIODialog;
 BacklightDialog *p_BacklightDlg;
+BoardInfoDialog *p_BoardinfoDlg;
 
 class CAboutDlg : public CDialogEx
 {
@@ -80,6 +82,7 @@ BEGIN_MESSAGE_MAP(CFICEAPIGUITestDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON_STORAGE, &CFICEAPIGUITestDlg::OnBnClickedButtonStorage)
 	ON_BN_CLICKED(IDC_BUTTON_I2CBUS, &CFICEAPIGUITestDlg::OnBnClickedButtonI2cbus)
 	ON_BN_CLICKED(IDC_BUTTON_BACKLIGHT, &CFICEAPIGUITestDlg::OnBnClickedButtonBacklight)
+	ON_BN_CLICKED(IDC_BUTTON_BOARDINFO, &CFICEAPIGUITestDlg::OnBnClickedButtonBoardinfo)
 END_MESSAGE_MAP()
 
 
@@ -252,4 +255,20 @@ void CFICEAPIGUITestDlg::OnBnClickedButtonBacklight()
 
 	p_BacklightDlg = new BacklightDialog();
 	INT_PTR nResponse = p_BacklightDlg->DoModal();
+}
+
+
+void CFICEAPIGUITestDlg::OnBnClickedButtonBoardinfo()
+{
+	if (p_BoardinfoDlg != NULL)
+	{
+		p_BoardinfoDlg->DestroyWindow();
+		delete p_BoardinfoDlg;
+		p_BoardinfoDlg = NULL;
+	}
+
+	//.RePaint();
+
+	p_BoardinfoDlg = new BoardInfoDialog();
+	INT_PTR nResponse = p_BoardinfoDlg->DoModal();
 }
