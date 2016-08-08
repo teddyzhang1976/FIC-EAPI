@@ -1,0 +1,1 @@
+1. I2c impl based on EC command how to?
